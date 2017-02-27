@@ -87,6 +87,7 @@ return htmlTemplate;
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
 
 var pool = new Pool(config); 
 app.get('/test-db', function(req , res) {
@@ -98,7 +99,7 @@ app.get('/test-db', function(req , res) {
       } else {
           res.send(JSON.stringify(result));
       }
-  })
+  });
 });
 
 app.get('/:articleName', function (req, res) {
